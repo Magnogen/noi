@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+  </head>
+  <body>
+    <div layers>
+      Options
+      <fieldset>
+        <legend option="colmode" type="radio">
+          Colour Mode<span class="no-highlight" value="true">RGB</span>
+          <span class="no-highlight" value="false">HSL</span>
+        </legend>
+        <div class="hover-underline" option="red" type="slider">
+          Red<span class="no-highlight" rules="min:0,max:1" value>0.50</span>
+        </div>
+        <div class="hover-underline" option="green" type="slider">
+          Green<span class="no-highlight" rules="min:0,max:1" value>0.50</span>
+        </div>
+        <div class="hover-underline" option="blue" type="slider">
+          Blue<span class="no-highlight" rules="min:0,max:1" value>0.50</span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend option="colmode" type="radio">
+          Colour Mode<span class="no-highlight" value="true">RGB</span>
+          <span class="no-highlight" value="false">HSL</span>
+        </legend>
+        <div class="hover-underline" option="red" type="slider">
+          Red<span class="no-highlight" rules="min:0,max:1" value>0.50</span>
+        </div>
+        <div class="hover-underline" option="green" type="slider">
+          Green<span class="no-highlight" rules="min:0,max:1" value>0.50</span>
+        </div>
+        <div class="hover-underline" option="blue" type="slider">
+          Blue<span class="no-highlight" rules="min:0,max:1" value>0.50</span>
+        </div>
+      </fieldset>
+      <div class="no-highlight">
+        +
+      </div>
+    </div>
+    <div main>
+      <div render>
+        <canvas></canvas>
+        <button class="underline no-highlight">Render</button>
+      </div>
+    </div>
+    <!-- https://github.com/jackunion/tooloud -->
+    <script src="tooloud.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>

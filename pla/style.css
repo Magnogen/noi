@@ -1,0 +1,126 @@
+/* Quite messy oof */
+
+html, body {
+  padding: 0; margin: 0;
+  width: 100vw; height: 100vh;
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: row;
+  --primary:   #ff8;
+  --highlight: #ff84;
+}
+
+body.moving_slider { cursor: ew-resize; }
+
+.underline, .hover-underline:hover {
+  /* Underline styles - details of technique here:
+   * https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
+   */
+  background: linear-gradient(to right, var(--primary), var(--primary));
+  background-size: 100% 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size .2s;
+}
+
+.no-highlight {
+  /* and so the pain begins */
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+::selection { background: var(--highlight) } /* WebKit/Blink Browsers */
+::-moz-selection { background--highlight) } /* Gecko Browsers */
+
+[layers] {
+  max-width: 48em;
+  background-color: #323232;
+  padding: 0.5em 1em;
+  flex-grow: 2;
+  font-size: 1.5em;
+} [layers] fieldset {
+  margin: 0.5em 0;
+  border: 1px solid var(--primary);
+  border-radius: calc(1em / 3);
+  background-color: #282828;
+  box-shadow: inset 0.2em 0.2em 0.2em #12121244,
+                    0.2em 0.2em 0.5em #12121244;
+} [layers] legend {
+  padding: 0.2em 0.5em;
+  margin: 0 -0.5em;
+  border: 1px solid var(--primary);
+  border-bottom: none;
+  border-radius: calc(1em / 3);
+  background-color: inherit;
+  box-shadow: inset 0.2em 0.2em 0.2em #121212AA;
+} [layers] [option] {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: calc(1.2em / 2);
+  white-space: nowrap;
+} [layers] [type="slider"] [value] {
+  margin-left: auto;
+  padding: 0 0.5em;
+  text-align: right;
+  cursor: ew-resize;
+} body.moving_slider *.hover-underline {
+  background: 0;
+} [layers] [type="radio"] [value] {
+  cursor: pointer;
+  padding: 0 0.5em;
+} [layers] [type="radio"] [value]:first-child {
+  margin-left: auto;
+  text-align: right;
+} [layers] [type="radio"] [value="true"] {
+  background-color: var(--highlight);
+  border-radius: calc(1em / 3);
+} [layers] [option] img {
+  width: auto; height: 1em;
+} [layers] > div {
+  text-align: center;
+  margin: 0.5em 0;
+  border: 1px solid var(--primary);
+  border-radius: calc(1em / 3);
+  background-color: #282828;
+  box-shadow: inset 0.2em 0.2em 0.2em #12121244,
+                    0.2em 0.2em 0.5em #12121244;
+}
+
+[main] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  flex-grow: 1;
+} [render] {
+  display: flex;
+  flex-direction: column;
+} [render] button {
+  background-color: #0000;
+  color: #fff;
+  border: none;
+  padding: 0.5em;
+} [render] button:hover:not(.rendering) {
+  background-size: 100% 4px;
+}
+
+canvas {
+  width: 50vw;
+  max-width: calc(75vh - 2em);
+  background-color: #d0d0d0;
+  background-image: linear-gradient(45deg, #808080 25%, transparent 25%),
+                    linear-gradient(-45deg, #808080 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #808080 75%),
+                    linear-gradient(-45deg, transparent 75%, #808080 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
