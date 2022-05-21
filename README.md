@@ -1,6 +1,14 @@
 # noi
 My young noise projects - NoiPla & NoiPro (they're canonically siblings)
 
+Mag from the future here, these projects never grew up. ;-;
+
+Although the idea was nice, it wasn't gonna work out.
+If you want to make generative art with a language I've made, feel free to use [Gentle](https://github.com/Magnogen/Gentle).
+
+I suppose Gentle could be their cousin? Idk.
+Maybe this whole family/living languages thing is a bit weird.
+
 ## NoiPla
 The older sister who likes playing with sliders - slightly more helpful, but unfinished. (Sorry, sweetheart.)
 
